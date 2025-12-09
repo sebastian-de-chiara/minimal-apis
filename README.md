@@ -60,5 +60,5 @@ dotnet ef dbcontext scaffold "Name=ConnectionStrings:DefaultConnection" Npgsql.E
 
 ## Cleanup
 ```bash
-docker compose down
+docker compose down -v
 ```
