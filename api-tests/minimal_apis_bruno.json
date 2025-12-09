@@ -1,0 +1,942 @@
+{
+  "name": "minimal_apis",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "Appointment",
+      "filename": "Appointment",
+      "seq": 1,
+      "examples": [],
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit"
+          }
+        },
+        "meta": {
+          "name": "Appointment",
+          "seq": 1
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "DELETE by ID",
+          "filename": "DELETE by ID.bru",
+          "seq": 5,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/appointments/101",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "GET All",
+          "filename": "GET All.bru",
+          "seq": 1,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/appointments",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "GET By ID",
+          "filename": "GET By ID.bru",
+          "seq": 2,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/appointments/1",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "POST Create",
+          "filename": "POST Create.bru",
+          "seq": 3,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/appointments",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"patientId\": 1,\n  \"doctorId\": 2,\n  \"serviceId\": 1,\n  \"locationId\": 1,\n  \"appointmentTime\": \"2025-12-10T14:00:00Z\",\n  \"durationMinutes\": 30,\n  \"status\": \"scheduled\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "PUT Update",
+          "filename": "PUT Update.bru",
+          "seq": 4,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/appointments/1",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"patientId\": 1,\n  \"doctorId\": 1,\n  \"serviceId\": 2,\n  \"locationId\": 1,\n  \"appointmentTime\": \"2025-12-10T15:00:00Z\",\n  \"durationMinutes\": 45,\n  \"status\": \"completed\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Doctors",
+      "filename": "Doctors",
+      "seq": 2,
+      "examples": [],
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit"
+          }
+        },
+        "meta": {
+          "name": "Doctors",
+          "seq": 2
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "DELETE",
+          "filename": "DELETE.bru",
+          "seq": 5,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/doctors/6",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "GET All",
+          "filename": "GET All.bru",
+          "seq": 1,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/doctors",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "GET By ID",
+          "filename": "GET By ID.bru",
+          "seq": 2,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/doctors/1",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "POST Create",
+          "filename": "POST Create.bru",
+          "seq": 3,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/doctors",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"Dr. House\",\n  \"specialty\": \"Diagnostics\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "PUT Update",
+          "filename": "PUT Update.bru",
+          "seq": 4,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/doctors/1",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n    \"name\": \"Dr. Wilson\",\n    \"specialty\": \"Oncology\"\n  }",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Location",
+      "filename": "Location",
+      "seq": 5,
+      "examples": [],
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit"
+          }
+        },
+        "meta": {
+          "name": "Location",
+          "seq": 5
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "DELETE",
+          "filename": "DELETE.bru",
+          "seq": 5,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/locations/4",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "GET All",
+          "filename": "GET All.bru",
+          "seq": 1,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/locations",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "GET By ID",
+          "filename": "GET By ID.bru",
+          "seq": 2,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/locations/1",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "POST Create",
+          "filename": "POST Create.bru",
+          "seq": 3,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/locations",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"North Clinic\",\n  \"city\": \"Sydney\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "PUT Update",
+          "filename": "PUT Update.bru",
+          "seq": 4,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/locations/1",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"North Medical Center\",\n  \"city\": \"Sydney\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Patient",
+      "filename": "Patient",
+      "seq": 4,
+      "examples": [],
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit"
+          }
+        },
+        "meta": {
+          "name": "Patient",
+          "seq": 4
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "DELETE",
+          "filename": "DELETE.bru",
+          "seq": 5,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/patients/1",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "GET All",
+          "filename": "GET All.bru",
+          "seq": 1,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/patients",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "GET By ID",
+          "filename": "GET By ID.bru",
+          "seq": 2,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/patients/1",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "POST Create",
+          "filename": "POST Create.bru",
+          "seq": 3,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/patients",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"Alice Johnson\",\n  \"email\": \"alice.johnson@example.com\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "PUT Update",
+          "filename": "PUT Update.bru",
+          "seq": 4,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/patients/1",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"Alice Johnson-Smith\",\n  \"email\": \"alice.smith@example.com\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "Service",
+      "filename": "Service",
+      "seq": 6,
+      "examples": [],
+      "root": {
+        "request": {
+          "auth": {
+            "mode": "inherit"
+          }
+        },
+        "meta": {
+          "name": "Service",
+          "seq": 6
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "DELETE",
+          "filename": "DELETE.bru",
+          "seq": 5,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/services/6",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "GET All",
+          "filename": "GET All.bru",
+          "seq": 1,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/services",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "GET By ID",
+          "filename": "GET By ID.bru",
+          "seq": 2,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/services/1",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "POST Create",
+          "filename": "POST Create.bru",
+          "seq": 3,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/services",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"X-Ray\",\n  \"price\": 150.00\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "PUT Update",
+          "filename": "PUT Update.bru",
+          "seq": 4,
+          "settings": {
+            "encodeUrl": true,
+            "timeout": 0
+          },
+          "tags": [],
+          "examples": [],
+          "request": {
+            "url": "{{baseUrl}}/services/1",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"name\": \"X-Ray Scan\",\n  \"price\": 175.50\n}",
+              "formUrlEncoded": [],
+              "multipartForm": [],
+              "file": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "docs": "",
+            "auth": {
+              "mode": "inherit"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "activeEnvironmentUid": "JBwiDgtJEEIQzZzQKozqq",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "baseUrl",
+          "value": "http://localhost:5155",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "Local"
+    }
+  ],
+  "brunoConfig": {
+    "version": "1",
+    "name": "minimal_apis",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0.005199432373046875,
+    "filesCount": 31
+  }
+}

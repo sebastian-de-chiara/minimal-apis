@@ -1,0 +1,154 @@
+@baseUrl = http://localhost:5155
+
+### Appointments - GET All
+GET {{baseUrl}}/appointments
+
+### Appointments - GET By ID
+GET {{baseUrl}}/appointments/1
+
+### Appointments - POST Create
+POST {{baseUrl}}/appointments
+Content-Type: application/json
+
+{
+  "patientId": 1,
+  "doctorId": 2,
+  "serviceId": 1,
+  "locationId": 1,
+  "appointmentTime": "2025-12-10T14:00:00Z",
+  "durationMinutes": 30,
+  "status": "scheduled"
+}
+
+### Appointments - PUT Update
+PUT {{baseUrl}}/appointments/1
+Content-Type: application/json
+
+{
+  "patientId": 1,
+  "doctorId": 1,
+  "serviceId": 2,
+  "locationId": 1,
+  "appointmentTime": "2025-12-10T15:00:00Z",
+  "durationMinutes": 45,
+  "status": "completed"
+}
+
+### Appointments - DELETE by ID
+DELETE {{baseUrl}}/appointments/101
+
+###############################################################################
+
+### Doctors - GET All
+GET {{baseUrl}}/doctors
+
+### Doctors - GET By ID
+GET {{baseUrl}}/doctors/1
+
+### Doctors - POST Create
+POST {{baseUrl}}/doctors
+Content-Type: application/json
+
+{
+  "name": "Dr. House",
+  "specialty": "Diagnostics"
+}
+
+### Doctors - PUT Update
+PUT {{baseUrl}}/doctors/1
+Content-Type: application/json
+
+{
+  "name": "Dr. Wilson",
+  "specialty": "Oncology"
+}
+
+### Doctors - DELETE
+DELETE {{baseUrl}}/doctors/6
+
+###############################################################################
+
+### Services - GET All
+GET {{baseUrl}}/services
+
+### Services - GET By ID
+GET {{baseUrl}}/services/1
+
+### Services - POST Create
+POST {{baseUrl}}/services
+Content-Type: application/json
+
+{
+  "name": "MRI Scan",
+  "price": 500.00
+}
+
+### Services - PUT Update
+PUT {{baseUrl}}/services/1
+Content-Type: application/json
+
+{
+  "name": "X-Ray Scan",
+  "price": 175.50
+}
+
+### Services - DELETE
+DELETE {{baseUrl}}/services/6
+
+###############################################################################
+
+### Locations - GET All
+GET {{baseUrl}}/locations
+
+### Locations - GET By ID
+GET {{baseUrl}}/locations/1
+
+### Locations - POST Create
+POST {{baseUrl}}/locations
+Content-Type: application/json
+
+{
+  "name": "North Clinic",
+  "city": "Sydney"
+}
+
+### Locations - PUT Update
+PUT {{baseUrl}}/locations/1
+Content-Type: application/json
+
+{
+  "name": "North Medical Center",
+  "city": "Sydney"
+}
+
+### Locations - DELETE
+DELETE {{baseUrl}}/locations/4
+
+###############################################################################
+
+### Patients - GET All
+GET {{baseUrl}}/patients
+
+### Patients - GET By ID
+GET {{baseUrl}}/patients/1
+
+### Patients - POST Create
+POST {{baseUrl}}/patients
+Content-Type: application/json
+
+{
+  "name": "Alice Johnson",
+  "email": "alice.johnson@example.com"
+}
+
+### Patients - PUT Update
+PUT {{baseUrl}}/patients/1
+Content-Type: application/json
+
+{
+  "name": "Alice Johnson-Smith",
+  "email": "alice.smith@example.com"
+}
+
+### Patients - DELETE
+DELETE {{baseUrl}}/patients/1

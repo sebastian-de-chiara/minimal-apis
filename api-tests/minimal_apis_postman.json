@@ -1,0 +1,720 @@
+{
+  "info": {
+    "name": "minimal_apis",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Appointment",
+      "item": [
+        {
+          "name": "DELETE by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/appointments/101",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "appointments",
+                "101"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/appointments",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "appointments"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "GET By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/appointments/1",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "appointments",
+                "1"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "POST Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/appointments",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "appointments"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patientId\": 1,\n  \"doctorId\": 2,\n  \"serviceId\": 1,\n  \"locationId\": 1,\n  \"appointmentTime\": \"2025-12-10T14:00:00Z\",\n  \"durationMinutes\": 30,\n  \"status\": \"scheduled\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "PUT Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/appointments/1",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "appointments",
+                "1"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"patientId\": 1,\n  \"doctorId\": 1,\n  \"serviceId\": 2,\n  \"locationId\": 1,\n  \"appointmentTime\": \"2025-12-10T15:00:00Z\",\n  \"durationMinutes\": 45,\n  \"status\": \"completed\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Doctors",
+      "item": [
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/doctors/6",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "doctors",
+                "6"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/doctors",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "doctors"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "GET By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/doctors/1",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "doctors",
+                "1"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "POST Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/doctors",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "doctors"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Dr. House\",\n  \"specialty\": \"Diagnostics\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "PUT Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/doctors/1",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "doctors",
+                "1"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Dr. Wilson\",\n    \"specialty\": \"Oncology\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Location",
+      "item": [
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/locations/4",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "locations",
+                "4"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/locations",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "locations"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "GET By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/locations/1",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "locations",
+                "1"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "POST Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/locations",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "locations"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"North Clinic\",\n  \"city\": \"Sydney\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "PUT Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/locations/1",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "locations",
+                "1"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"North Medical Center\",\n  \"city\": \"Sydney\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Patient",
+      "item": [
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/patients/1",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "patients",
+                "1"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/patients",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "patients"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "GET By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/patients/1",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "patients",
+                "1"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "POST Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/patients",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "patients"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Alice Johnson\",\n  \"email\": \"alice.johnson@example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "PUT Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/patients/1",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "patients",
+                "1"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Alice Johnson-Smith\",\n  \"email\": \"alice.smith@example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Service",
+      "item": [
+        {
+          "name": "DELETE",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/services/6",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "services",
+                "6"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "GET All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/services",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "services"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "GET By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/services/1",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "services",
+                "1"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "POST Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/services",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "services"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"X-Ray\",\n  \"price\": 150.00\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "PUT Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "auth": {
+              "type": "noauth"
+            },
+            "description": "",
+            "url": {
+              "raw": "{{baseUrl}}/services/1",
+              "protocol": "",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "services",
+                "1"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"X-Ray Scan\",\n  \"price\": 175.50\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
