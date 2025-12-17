@@ -21,6 +21,8 @@ namespace minimal_apis
                 options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")
                 ?? throw new InvalidOperationException("Connection string not found.")));
 
+            builder.Services.AddMemoryCache();
+
             builder.Services.AddOpenApi();
 
             var app = builder.Build();

@@ -1,7 +1,10 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using minimal_apis.DTOs;
 using minimal_apis.Models;
 
@@ -14,8 +17,17 @@ public static class DoctorEndpoints
         var group = app.MapGroup("/doctors");
 
         // GET all doctors
-        group.MapGet("/", async (MyDbContext db) =>
+        group.MapGet("/", async (MyDbContext db, IMemoryCache cache) =>
         {
+            const string cacheKey = "doctors_list";
+
+            // Try and get from cache first
+            if (cache.TryGetValue(cacheKey, out List<DoctorDto>? cachedDoctors))
+            {
+                return cachedDoctors;
+            }
+
+            // Not in cache so get from the database instead
             var doctors = await db.Doctors
                 .Select(d => new DoctorDto
                 {
@@ -25,13 +37,25 @@ public static class DoctorEndpoints
                 })
                 .ToListAsync();
 
+            // Store in cache
+            cache.Set(cacheKey, doctors, TimeSpan.FromHours(24));
+
             return doctors;
         })
         .WithName("GetAllDoctors");
 
         // GET doctor by id
-        group.MapGet("/{id}", async (int id, MyDbContext db) =>
+        group.MapGet("/{id}", async (int id, MyDbContext db, IMemoryCache cache) =>
         {
+            var cacheKey = $"doctor_{id}";
+
+            // Try and get from cache first
+            if (cache.TryGetValue(cacheKey, out DoctorDto? cachedDoctor))
+            {
+                return Results.Ok(cachedDoctor);
+            }
+
+            // Not in cache, get from database
             var doctor = await db.Doctors
                 .Where(d => d.DoctorId == id)
                 .Select(d => new DoctorDto
@@ -42,12 +66,20 @@ public static class DoctorEndpoints
                 })
                 .FirstOrDefaultAsync();
 
-            return doctor is not null ? Results.Ok(doctor) : Results.NotFound();
+            if (doctor is null)
+            {
+                return Results.NotFound();
+            }
+
+            // Store in cache
+            cache.Set(cacheKey, doctor, TimeSpan.FromHours(24));
+
+            return Results.Ok(doctor);
         })
         .WithName("GetDoctorById");
 
         // POST create doctor
-        group.MapPost("/", async (CreateDoctorDto dto, MyDbContext db) =>
+        group.MapPost("/", async (CreateDoctorDto dto, MyDbContext db, IMemoryCache cache) =>
         {
             var doctor = new Doctor
             {
@@ -57,6 +89,9 @@ public static class DoctorEndpoints
 
             db.Doctors.Add(doctor);
             await db.SaveChangesAsync();
+
+            // Invalidate cache, it's now incomplete
+            cache.Remove("doctors_list");
 
             // Return the created doctor
             var createdDoctor = new DoctorDto
@@ -71,7 +106,7 @@ public static class DoctorEndpoints
         .WithName("CreateDoctor");
 
         // PUT update doctor
-        group.MapPut("/{id}", async (int id, UpdateDoctorDto dto, MyDbContext db) =>
+        group.MapPut("/{id}", async (int id, UpdateDoctorDto dto, MyDbContext db, IMemoryCache cache) =>
         {
             var existing = await db.Doctors.FindAsync(id);
             if (existing is null) return Results.NotFound();
@@ -80,12 +115,17 @@ public static class DoctorEndpoints
             existing.Specialty = dto.Specialty;
 
             await db.SaveChangesAsync();
+
+            // Invalidate both cache keys. List has stale data, individual doc is outdated
+            cache.Remove("doctors_list");
+            cache.Remove($"doctor_{id}");
+
             return Results.NoContent();
         })
         .WithName("UpdateDoctor");
 
         // DELETE doctor
-        group.MapDelete("/{id}", async (int id, MyDbContext db) =>
+        group.MapDelete("/{id}", async (int id, MyDbContext db, IMemoryCache cache) =>
         {
             var doctor = await db.Doctors.FindAsync(id);
             if (doctor is null) return Results.NotFound();
@@ -94,6 +134,11 @@ public static class DoctorEndpoints
             {
                 db.Doctors.Remove(doctor);
                 await db.SaveChangesAsync();
+
+                // Invalidate both cache keys. List includes deleted doctor, individual doc shouldn't be cached
+                cache.Remove("doctors_list");
+                cache.Remove($"doctor_{id}");
+
                 return Results.NoContent();
             }
             catch (DbUpdateException)
